@@ -194,12 +194,10 @@
         }
 
         function canvasDownload() {
-        	let div = document.getElementById('photo');
-
-		    html2canvas(div, {scrollY: -window.scrollY}).then(
-                function (canvas) {
-		        	Canvas2Image.saveAsPNG(canvas);
-		        })
+        	var link = document.createElement('a');
+			link.download = 'filename.png';
+			link.href = document.getElementById('sidcanvas').toDataURL()
+			link.click();   
 		}
 		  
     </script>
