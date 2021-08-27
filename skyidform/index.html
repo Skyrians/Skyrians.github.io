@@ -235,12 +235,9 @@
         }
 
         function canvasDownload() {
-        	var resizedCanvas = document.getElementById('sidcanvas');
-        	resizedCanvas.width = "1000";
-
         	var link = document.createElement('a');
 			link.download = 'SkyriansCard.png';
-			link.href = resizedCanvas.toDataURL()
+			link.href = document.getElementById('sidcanvas').toDataURL()
 			link.click();   
 		}
 
