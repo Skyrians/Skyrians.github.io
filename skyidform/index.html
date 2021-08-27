@@ -211,7 +211,7 @@
             // function to take a screenshot
             // and append it
             // to the output div
-            html2canvas(div, {scale:1, scrollY: -window.scrollY}).then(
+            html2canvas(div, {scale:2, scrollY: -window.scrollY}).then(
                 function (canvas) {
                 	canvas.id = "sidcanvas";
                     document.getElementById('output').appendChild(canvas);
@@ -221,7 +221,7 @@
 
         function canvasDownload() {
         	var link = document.createElement('a');
-			link.download = 'filename.png';
+			link.download = 'SkyriansCard.jpg';
 			link.href = document.getElementById('sidcanvas').toDataURL()
 			link.click();   
 		}
