@@ -17,13 +17,13 @@
 		canvas {  width: 100% !important; height: auto !important;}
 	</style>
 
-<title>Skyrians Card</title>
+<title>SKYRIANS FORM</title>
 </head>
 <body>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12 text-center" style="margin: auto;">
-			<h1>Skyrians Community Card</h1>
+			<h1>Skyrians Card Generator</h1>
 		</div>
 	</div>
 
@@ -143,8 +143,7 @@
 	      <div class="modal-body">
 	      	<div class="container-fluid">
 		      	<div class="row">
-					<div class="col-md-12 text-center" style="margin: auto;">
-						<div id="output"></div>
+					<div id="output" class="col-md-12 text-center" style="margin: auto;">
 					</div>
 				</div>
 			</div>
@@ -212,11 +211,12 @@
             // function to take a screenshot
             // and append it
             // to the output div
-            html2canvas(div, {scrollY: -window.scrollY}).then(
+            html2canvas(div, {scale:1, scrollY: -window.scrollY}).then(
                 function (canvas) {
                 	canvas.id = "sidcanvas";
                     document.getElementById('output').appendChild(canvas);
                 })
+
         }
 
         function canvasDownload() {
@@ -227,9 +227,9 @@
 		}
 
 		function clearCanvas() {
-			var div = document.getElementById('sidcanvas');
+			var canvas = document.getElementById('sidcanvas');
 			
-			div.parentNode.removeChild(div);
+			document.getElementById('output').removeChild(canvas);
 		}
 		  
     </script>
