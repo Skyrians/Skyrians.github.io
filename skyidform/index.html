@@ -11,7 +11,20 @@
 
 		.no-padding
 		{
-			padding: 0;
+			padding-right: calc(var(--bs-gutter-x) * .2);
+    		padding-left: calc(var(--bs-gutter-x) * .2);
+		}
+
+		.sid-gate
+		{
+			border-radius: 15px;
+    		border: 1px solid grey;
+		}
+
+		.sid-border
+		{
+    		border-radius: 100%;
+    		border: 1px solid grey;
 		}
 
 		canvas {  width: 100% !important; height: auto !important;}
@@ -57,22 +70,22 @@
 					<p class="p-flat"><strong>Favorite Realm</strong></p>
 					<div class="row" style="margin-bottom: 1rem;">
 				  		<div class="col-md-2 text-center no-padding">
-				  			<img id="isle" src="../assets/gate/isle_b.png" alt="isle_b" class="img-responsive" width="100%" onclick="changeImageGate('isle')">
+				  			<img id="isle" src="../assets/gate/isle_b.png" alt="isle_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('isle')">
 				  		</div>
 				  		<div class="col-md-2 text-center no-padding">
-				  			<img id="prairie" src="../assets/gate/prairie_b.png" alt="prairie_b" class="img-responsive" width="100%" onclick="changeImageGate('prairie')">
+				  			<img id="prairie" src="../assets/gate/prairie_b.png" alt="prairie_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('prairie')">
 				  		</div>
 				  		<div class="col-md-2 text-center no-padding">
-				  			<img id="forest" src="../assets/gate/forest_b.png" alt="forest_b" class="img-responsive" width="100%" onclick="changeImageGate('forest')">
+				  			<img id="forest" src="../assets/gate/forest_b.png" alt="forest_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('forest')">
 				  		</div>
 				  		<div class="col-md-2 text-center no-padding">
-				  			<img id="valley" src="../assets/gate/valley_b.png" alt="valley_b" class="img-responsive" width="100%" onclick="changeImageGate('valley')">
+				  			<img id="valley" src="../assets/gate/valley_b.png" alt="valley_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('valley')">
 				  		</div>
 				  		<div class="col-md-2 text-center no-padding">
-				  			<img id="waste" src="../assets/gate/waste_b.png" alt="waste_b" class="img-responsive" width="100%" onclick="changeImageGate('waste')">
+				  			<img id="waste" src="../assets/gate/waste_b.png" alt="waste_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('waste')">
 				  		</div>
 				  		<div class="col-md-2 text-center no-padding">
-				  			<img id="vault" src="../assets/gate/vault_b.png" alt="vault_b" class="img-responsive" width="100%" onclick="changeImageGate('vault')">
+				  			<img id="vault" src="../assets/gate/vault_b.png" alt="vault_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('vault')">
 				  		</div>
 					</div>
 
@@ -82,16 +95,16 @@
 				  			&nbsp;
 				  		</div>
 				  		<div class="col-md-2 text-center">
-				  				<img id="morning" src="../assets/weather/morning_b.png" alt="morning_b" class="img-responsive" width="100%" onclick="changeImage('morning')">
+				  				<img id="morning" src="../assets/weather/morning_b.png" alt="morning_b" class="img-responsive sid-border" width="100%" onclick="changeImage('morning')">
 				  		</div>
 				  		<div class="col-md-2 text-center">
-				  				<img id="siang" src="../assets/weather/siang_b.png" alt="siang_b" class="img-responsive" width="100%" onclick="changeImage('siang')">
+				  				<img id="siang" src="../assets/weather/siang_b.png" alt="siang_b" class="img-responsive sid-border" width="100%" onclick="changeImage('siang')">
 				  		</div>
 				  		<div class="col-md-2 text-center">
-				  				<img id="sore" src="../assets/weather/sore_b.png" alt="sore_b" class="img-responsive" width="100%" onclick="changeImage('sore')">
+				  				<img id="sore" src="../assets/weather/sore_b.png" alt="sore_b" class="img-responsive sid-border" width="100%" onclick="changeImage('sore')">
 				  		</div>
 				  		<div class="col-md-2 text-center">
-				  				<img id="malam" src="../assets/weather/malam_b.png" alt="malam_b" class="img-responsive" width="100%" onclick="changeImage('malam')">
+				  				<img id="malam" src="../assets/weather/malam_b.png" alt="malam_b" class="img-responsive sid-border" width="100%" onclick="changeImage('malam')">
 				  		</div>
 					</div>
 
