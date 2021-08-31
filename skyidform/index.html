@@ -11,23 +11,31 @@
 
 		.no-padding
 		{
+			/*
 			padding-right: calc(var(--bs-gutter-x) * .2);
-    		padding-left: calc(var(--bs-gutter-x) * .2);
+    	padding-left: calc(var(--bs-gutter-x) * .2);
+    	*/
+    	padding: 0 !important;
 		}
 
 		.sid-gate
 		{
+			/*
 			border-radius: 15px;
-    		border: 1px solid grey;
+  		border: 1px solid grey;
+  		*/
 		}
 
 		.sid-border
 		{
-    		border-radius: 100%;
-    		border: 1px solid grey;
+  		border-radius: 100%;
+  		border: 1px solid grey;
 		}
 
-		canvas {  width: 100% !important; height: auto !important;}
+		canvas {  
+			width: 100% !important; 
+			height: auto !important;
+		}
 	</style>
 
 <title>SKYRIANS CARD</title>
@@ -85,17 +93,17 @@
 			      	</div>
 			    	<div class="row">
 			  			<h2 class="large text-center" contenteditable="true" onclick="document.execCommand('selectAll',false,null)">[Skyrians Name]</h3>
-			        	<h4 class="text-center" contenteditable="true" onclick="document.execCommand('selectAll',false,null)">[Describe Your Self]</h5>
+			        	<h4 class="text-center" contenteditable="true" onclick="document.execCommand('selectAll',false,null)">[Describe Skyrians]</h5>
 			        </div>
 				</div>
 				<div class="card-body">
-					<h5 class="p-flat">More About Me</h5>
+					<h5 class="p-flat">More About Skyrians</h5>
 					<p contenteditable="true">[I am Skyrians]</p>
 
 					<h5 class="p-flat">Skyrians Birthday</h5>
 					<p contenteditable="true">[At Hidden Forest A Dacade Ago]</p>
 
-					<h5 class="p-flat">I Speak</h5>
+					<h5 class="p-flat">Skyrians Language</h5>
 					<p contenteditable="true">[I Speak Skyrians Language]</p>
 
 					<h5 class="p-flat">Favorite Realm</h5>
