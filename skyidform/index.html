@@ -46,6 +46,9 @@
 		}
 
 		.image-cropper {
+				width: 200px; 
+				height: 200px; 
+				float: right;
 		    position: relative;
 		    overflow: hidden;
 		    -webkit-border-radius: 50%;
@@ -56,9 +59,18 @@
 		}
 
 		.rounded{
-			  width: 200px; 
-			  height: 200px; 
-			  object-fit: cover;
+			  height: 200px;
+			  width: 200px;
+		}
+
+		.rounded-por{
+			  height: auto;
+			  width: 200px;
+		}
+
+		.rounded-lan{
+			  height: 200px;
+			  width: auto;
 		}
 
 		.sid-text {
@@ -70,6 +82,14 @@
 			position: absolute;
 			margin-top: -12px;
     	margin-left: -27.5px;
+		}
+
+		.sid-ppic{
+			width:200px;
+		  height:200px;
+		  background-image: url(../assets/mod_hau.jpg);
+		  background-size:cover;
+		  background-position:center;
 		}
 
 	</style>
@@ -131,8 +151,9 @@
 								  <tbody>
 								    <tr>
 								    	<td width="40%" style="padding-right: 1em;">
-								    		<div class="image-cropper" style="width: 200px; height: 200px; border: 0px solid grey; float: right;" >
-				      						<label for="uploadImage"><img id="uploadPreview" class="img-fluid rounded" src="../assets/mod_hau.jpg" alt="Post a Pic"></label>
+								    		<div class="image-cropper" >
+				      						<label for="uploadImage"><img id="uploadPreview" class="img-responsive rounded-lan" src="../assets/mod_hau.jpg" alt="Post a Pic"></label> 
+				      						<!-- <div id="uploadPreview" class="sid-ppic"></div> -->
 				      					</div>
 				      				</td>
 								      <td class="align-middle sid-text">
@@ -350,6 +371,8 @@
 			var canvas = document.getElementById('sidcanvas');
 			
 			document.getElementById('output').removeChild(canvas);
+
+			sidChangeCSS();
 		}
 
 
@@ -357,13 +380,51 @@
 
 		oFReader.onload = function (oFREvent) {
 		  document.getElementById("uploadPreview").src = oFREvent.target.result;
+
+		  var image = new Image();
+		  var rasio;
+		  var margin;
+
+	    image.src = oFREvent.target.result;
+
+	    image.onload = function() {
+	    		//alert(image.naturalWidth + 'x' + image.naturalHeight);
+
+			  	if (image.naturalWidth > image.naturalHeight) {
+						//alert('landscape');
+						document.getElementById("uploadPreview").className = "img-responsive rounded-lan"
+						rasio = image.naturalWidth/(image.naturalHeight/200);
+						margin = (Math.round(rasio)-200)/2;
+						document.getElementById("uploadPreview").style.marginLeft = "-"+margin+"px";
+						document.getElementById("uploadPreview").style.marginTop = "0px";
+					} 
+					else if (image.naturalWidth < image.naturalHeight) {
+						//alert('portrait');
+						document.getElementById("uploadPreview").className = "img-responsive rounded-por"
+						rasio = image.naturalHeight/(image.naturalWidth/200);
+						margin = (Math.round(rasio)-200)/2;
+						document.getElementById("uploadPreview").style.marginLeft = "0";
+						document.getElementById("uploadPreview").style.marginTop = "-"+margin+"px";
+					} 
+					else {
+						//alert('even');
+						document.getElementById("uploadPreview").style.marginLeft = "0";
+						document.getElementById("uploadPreview").style.marginTop = "0px";
+					}		
+	    }
 		};
 
 		function loadImageFile() {
-		  if (document.getElementById("uploadImage").files.length === 0) { return; }
+		  if (document.getElementById("uploadImage").files.length === 0) { 
+		  	return; 
+		  }
 		  var oFile = document.getElementById("uploadImage").files[0];
-		  if (!rFilter.test(oFile.type)) { alert("You must select a valid image file!"); return; }
+		  if (!rFilter.test(oFile.type)) { 
+		  		alert("You must select a valid image file!"); return; 
+		  }
+
 		  oFReader.readAsDataURL(oFile);
+		  
 		}
 
 		  
