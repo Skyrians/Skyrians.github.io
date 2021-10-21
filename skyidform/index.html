@@ -220,22 +220,22 @@
 					<h5 class="p-flat">Favorite Realm</h5>
 					<div class="row">
 				  		<div class="col-md-2 text-center no-padding">
-				  			<img id="isle" src="assets/gate/isle_b.png" alt="isle_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('isle')">
+				  			<img id="isle" src="assets/gate/isle_b.png" alt="isle_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('isle')" onmouseover="hoverg('isle');" onmouseout="unhoverg('isle');">
 				  		</div>
 				  		<div class="col-md-2 text-center no-padding">
-				  			<img id="prairie" src="assets/gate/prairie_b.png" alt="prairie_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('prairie')">
+				  			<img id="prairie" src="assets/gate/prairie_b.png" alt="prairie_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('prairie')" onmouseover="hoverg('prairie');" onmouseout="unhoverg('prairie');">
 				  		</div>
 				  		<div class="col-md-2 text-center no-padding">
-				  			<img id="forest" src="assets/gate/forest_b.png" alt="forest_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('forest')">
+				  			<img id="forest" src="assets/gate/forest_b.png" alt="forest_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('forest')" onmouseover="hoverg('forest');" onmouseout="unhoverg('forest');">
 				  		</div>
 				  		<div class="col-md-2 text-center no-padding">
-				  			<img id="valley" src="assets/gate/valley_b.png" alt="valley_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('valley')">
+				  			<img id="valley" src="assets/gate/valley_b.png" alt="valley_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('valley')" onmouseover="hoverg('valley');" onmouseout="unhoverg('valley');">
 				  		</div>
 				  		<div class="col-md-2 text-center no-padding">
-				  			<img id="waste" src="assets/gate/waste_b.png" alt="waste_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('waste')">
+				  			<img id="waste" src="assets/gate/waste_b.png" alt="waste_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('waste')" onmouseover="hoverg('waste');" onmouseout="unhoverg('waste');">
 				  		</div>
 				  		<div class="col-md-2 text-center no-padding">
-				  			<img id="vault" src="assets/gate/vault_b.png" alt="vault_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('vault')">
+				  			<img id="vault" src="assets/gate/vault_b.png" alt="vault_b" class="img-responsive sid-gate" width="100%" onclick="changeImageGate('vault')" onmouseover="hoverg('vault');" onmouseout="unhoverg('vault');">
 				  		</div>
 					</div>
 				</div>
@@ -398,6 +398,32 @@
 	            document.getElementById(x).src = "assets/gate/" + x + "_b.png";
 	        }
 	    }
+	
+	function hoverg(x) {
+			  if (document.getElementById(x).alt == x+"_b") 
+	        {
+	            document.getElementById(x).alt = x
+	            document.getElementById(x).src = "assets/gate/" + x + ".png";
+	        }
+	        else 
+	        {
+	            document.getElementById(x).alt = x+"_b"
+	            document.getElementById(x).src = "assets/gate/" + x + "_b.png";
+	        }
+			}
+
+			function unhoverg(x) {
+			  if (document.getElementById(x).alt == x+"_b") 
+	        {
+	            document.getElementById(x).alt = x
+	            document.getElementById(x).src = "assets/gate/" + x + ".png";
+	        }
+	        else 
+	        {
+	            document.getElementById(x).alt = x+"_b"
+	            document.getElementById(x).src = "assets/gate/" + x + "_b.png";
+	        }
+	}
 
         // Define the function 
         // to screenshot the div
