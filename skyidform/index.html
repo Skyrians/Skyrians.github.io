@@ -202,16 +202,16 @@
 				  		<div class="col-md-5 text-center" style="margin: auto;">
 				  			<div class="row">
 						  		<div class="col-md-3 text-center">
-						  				<img id="pagi" src="assets/weather/pagi_b.png" alt="pagi_b" class="img-responsive sid-border" width="100%" onclick="changeImage('pagi')">
+						  				<img id="pagi" src="assets/weather/pagi_b.png" alt="pagi_b" class="img-responsive sid-border" width="100%" onclick="changeImage('pagi')" onmouseover="hover('pagi');" onmouseout="unhover('pagi');">
 						  		</div>
 						  		<div class="col-md-3 text-center">
-						  				<img id="siang" src="assets/weather/siang_b.png" alt="siang_b" class="img-responsive sid-border" width="100%" onclick="changeImage('siang')">
+						  				<img id="siang" src="assets/weather/siang_b.png" alt="siang_b" class="img-responsive sid-border" width="100%" onclick="changeImage('siang')" onmouseover="hover('siang');" onmouseout="unhover('siang');">
 						  		</div>
 						  		<div class="col-md-3 text-center">
-						  				<img id="sore" src="assets/weather/sore_b.png" alt="sore_b" class="img-responsive sid-border" width="100%" onclick="changeImage('sore')">
+						  				<img id="sore" src="assets/weather/sore_b.png" alt="sore_b" class="img-responsive sid-border" width="100%" onclick="changeImage('sore')" onmouseover="hover('sore');" onmouseout="unhover('sore');">
 						  		</div>
 						  		<div class="col-md-3 text-center">
-						  				<img id="malam" src="assets/weather/malam_b.png" alt="malam_b" class="img-responsive sid-border" width="100%" onclick="changeImage('malam')">
+						  				<img id="malam" src="assets/weather/malam_b.png" alt="malam_b" class="img-responsive sid-border" width="100%" onclick="changeImage('malam')" onmouseover="hover('malam');" onmouseout="unhover('malam');">
 						  		</div>
 						  	</div>
 				  		</div>
@@ -343,6 +343,32 @@
 	            document.getElementById(x).src = "assets/weather/" + x + "_b.png";
 	        }
 	    }
+		
+		function hover(x) {
+			  if (document.getElementById(x).alt == x+"_b") 
+	        {
+	            document.getElementById(x).alt = x
+	            document.getElementById(x).src = "assets/weather/" + x + ".png";
+	        }
+	        else 
+	        {
+	            document.getElementById(x).alt = x+"_b"
+	            document.getElementById(x).src = "assets/weather/" + x + "_b.png";
+	        }
+			}
+
+			function unhover(x) {
+			  if (document.getElementById(x).alt == x+"_b") 
+	        {
+	            document.getElementById(x).alt = x
+	            document.getElementById(x).src = "assets/weather/" + x + ".png";
+	        }
+	        else 
+	        {
+	            document.getElementById(x).alt = x+"_b"
+	            document.getElementById(x).src = "assets/weather/" + x + "_b.png";
+	        }
+			}
 
 	    function changeImageGate(x) {
 
